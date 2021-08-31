@@ -145,9 +145,7 @@ def solve_sudoku(matrix):
     return False
 
 
-# create main function
-if __name__ == "__main__":
-
+def main():
     sudoku_matrix = [
         [3, 0, 6, 5, 0, 8, 4, 0, 0],
         [5, 2, 0, 0, 0, 0, 0, 0, 0],
@@ -164,7 +162,6 @@ if __name__ == "__main__":
         print_matrix(sudoku_matrix)
     else:
         print("no solution available")
-
     # output:
     # 5 2 9 1 3 4 7 6 8
     # 4 8 7 6 2 9 5 3 1
@@ -177,3 +174,8 @@ if __name__ == "__main__":
 
     # check if the solution is a valid one to check if the algorithm works
     # print(is_valid_matrix(sudoku_matrix))
+
+
+# create main function
+if __name__ == "__main__":
+    raise SystemExit(main())
