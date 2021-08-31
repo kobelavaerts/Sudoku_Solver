@@ -17,10 +17,23 @@
 
 # function for printing the matrix:
 def print_matrix(matrix):
+    nline = 0
     for line in matrix:
+        if nline % 3 == 0:
+            print("-------------------------")
+        nline += 1
+        ncol = 0
         for cell in line:
+            if ncol % 3 == 0:
+                print("|", end=" ")
+            ncol += 1
             print(cell, end=" ")
+            if ncol == 9:
+                print("|", end=" ")
+
         print()
+        if nline == 9:
+            print("-------------------------")
 
 
 # function to create the full hashmap of a matrix
@@ -163,4 +176,4 @@ if __name__ == "__main__":
     # 7 4 5 2 8 6 3 1 9
 
     # check if the solution is a valid one to check if the algorithm works
-    print(is_valid_matrix(sudoku_matrix))
+    # print(is_valid_matrix(sudoku_matrix))
