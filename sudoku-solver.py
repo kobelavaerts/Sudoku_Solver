@@ -106,7 +106,7 @@ def find_empty_cell(matrix):
 # recursive function
 def solve_sudoku(matrix):
     # if there is no empty cell left, the sudoko is solved
-    if not find_empty_cell(matrix):
+    if not find_empty_cell(matrix) and is_valid_matrix(matrix):
         return True
 
     # extract the row and column nr from the position variable,
@@ -135,22 +135,22 @@ def solve_sudoku(matrix):
 # create main function
 if __name__ == "__main__":
 
-    # sudoku_matrix = [
-    #     [3, 0, 6, 5, 0, 8, 4, 0, 0],
-    #     [5, 2, 0, 0, 0, 0, 0, 0, 0],
-    #     [0, 8, 7, 0, 0, 0, 0, 3, 1],
-    #     [0, 0, 3, 0, 1, 0, 0, 8, 0],
-    #     [9, 0, 0, 8, 6, 3, 0, 0, 5],
-    #     [0, 5, 0, 0, 9, 0, 6, 0, 0],
-    #     [1, 3, 0, 0, 0, 0, 2, 5, 0],
-    #     [0, 0, 0, 0, 0, 0, 0, 7, 4],
-    #     [0, 0, 5, 2, 0, 6, 3, 0, 0],
-    # ]
+    sudoku_matrix = [
+        [3, 0, 6, 5, 0, 8, 4, 0, 0],
+        [5, 2, 0, 0, 0, 0, 0, 0, 0],
+        [0, 8, 7, 0, 0, 0, 0, 3, 1],
+        [0, 0, 3, 0, 1, 0, 0, 8, 0],
+        [9, 0, 0, 8, 6, 3, 0, 0, 5],
+        [0, 5, 0, 0, 9, 0, 6, 0, 0],
+        [1, 3, 0, 0, 0, 0, 2, 5, 0],
+        [0, 0, 0, 0, 0, 0, 0, 7, 4],
+        [0, 0, 5, 2, 0, 6, 3, 0, 0],
+    ]
 
-    # if solve_sudoku(sudoku_matrix):
-    #     print_matrix(sudoku_matrix)
-    # else:
-    #     print("no solution available")
+    if solve_sudoku(sudoku_matrix):
+        print_matrix(sudoku_matrix)
+    else:
+        print("no solution available")
 
     # output:
     # 5 2 9 1 3 4 7 6 8
@@ -160,18 +160,7 @@ if __name__ == "__main__":
     # 8 5 1 7 9 2 6 4 3
     # 1 3 8 9 4 7 2 5 6
     # 6 9 2 3 5 1 8 7 4
-    # 7 4 5 2 8 6 3 1 1
+    # 7 4 5 2 8 6 3 1 9
 
     # check if the solution is a valid one to check if the algorithm works
-    test_matrix = [
-        [3, 1, 6, 5, 7, 8, 4, 9, 2],
-        [5, 2, 9, 1, 3, 4, 7, 6, 8],
-        [4, 8, 7, 6, 2, 9, 5, 3, 1],
-        [2, 6, 3, 4, 1, 5, 9, 8, 7],
-        [9, 7, 4, 8, 6, 3, 1, 2, 5],
-        [8, 5, 1, 7, 9, 2, 6, 4, 3],
-        [1, 3, 8, 9, 4, 7, 2, 5, 6],
-        [6, 9, 2, 3, 5, 1, 8, 7, 4],
-        [7, 4, 5, 2, 8, 6, 3, 1, 1],
-    ]
-    print(is_valid_matrix(test_matrix))
+    print(is_valid_matrix(sudoku_matrix))
