@@ -89,15 +89,6 @@ def is_valid_matrix(matrix):
     return True
 
 
-# function that checks if the cell is still empty
-# returns true if the cell is empty
-def is_empty(cell):
-    if cell == 0:
-        return True
-    else:
-        return False
-
-
 # function to check if there is an empty cell in the matrix
 # if there is an empty cell, save the coordinates in the position variable
 def find_empty_cell(matrix):
